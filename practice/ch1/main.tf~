@@ -1,0 +1,20 @@
+provider "aws" {
+  profile = "terraform-user"
+}
+
+resources "aws_key_pair" "strider_local" {
+  key_name    = "strider_local-key"
+  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCNSErTCcv1unMZxZ8W+shK7bHDGKD07lKlQacmpzVWXXCeAO4inKc8hj73cS+BcMsTo4/mWw4ALfiU4NfiduYitRvzNNDLy5/ysjLIv87oLbfYQbAFmlH71HIdEHZwVscoBXFphiM9Jxws+GD8twitE5Dx9xfdOwZNKzOpxKs7QT58CSGVnyY60NLoAOAfhPfu5laV0ZRYX9EhOcVx3RBzIE31nn0pXwt6CesjqTSIhtJP/1AMAZBi0U4i53hXT6H80GShgEFi5jVR3UibNTM47K1ML97Mop8PzQQGhSCmsw9X9JsXg7M+hlJEOdt/nGuJS6pKIY/8lKxsXAghCaF1DiXpEZ/wh2Y6SHIFRXzPdHKnB6PAtv0/wr+bb6RfDtqO4XGdoOHhL196AV+2O4vyF3SwCLSZBxjgxLLo0TjjTaSU26xuE4173W2oaPaUj2osQUbD7I4+poD95Ng+0JY+0BhIKaPHLW3NJXQN1QfPDMPFkXGTeHqimrMvyN6gZCs= cjs@strider"
+}
+
+}
+
+resource "aws_instance" "HelloAlma" {
+  ami           = "ami-08b29382556696ac9"
+  instance_type = "t2.micro"
+  key_name      = "strider_local
+  tags = {
+    Name  = "helloalma"
+    Email = "chrisjsteinke@gmailcom"
+  }
+}
