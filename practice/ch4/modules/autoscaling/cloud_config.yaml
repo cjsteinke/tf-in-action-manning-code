@@ -1,0 +1,27 @@
+#cloud-condfig
+write_file:
+  - path: /etc/server.conf
+    owner: root:root
+    permissions: "0644"
+    content: |
+      {
+        "user": "${user}"
+        "password": "${password}"
+        "database": "${database}"
+        "netloc": "${hostname}"
+      }
+
+runcmd:
+  - curl -sL https://api.github.com/repos/terraform-in-action/vanilla-webserver-src/releases/latest | jq -r ".assets[].browsers_download_url" | wget -qi -
+  - unzip deployment.zip
+  - ./deployment/server
+
+packages:
+  - jq
+  - wget
+  - unzip
+  
+  
+
+    
+    
