@@ -1,0 +1,8 @@
+╷
+│ Error: creating RDS DB Instance (joe-cool-project-db-instance): operation error RDS: CreateDBInstance, https response error StatusCode: 400, RequestID: a4e32569-6475-44b1-b55a-8d4ffd58472d, api error InvalidParameterCombination: RDS does not support creating a DB instance with the following combination: DBInstanceClass=db.t2.micro, Engine=mysql, EngineVersion=8.0.41, LicenseModel=general-public-license. For supported combinations of instance class and database engine version, see the documentation.
+│ 
+│   with module.database.aws_db_instance.database,
+│   on modules/database/main.tf line 7, in resource "aws_db_instance" "database":
+│    7: resource "aws_db_instance" "database" {
+│ 
+╵
