@@ -1,4 +1,4 @@
-#cloud-condfig
+#cloud-config
 write_file:
   - path: /etc/server.conf
     owner: root:root
